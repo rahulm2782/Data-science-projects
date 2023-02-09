@@ -1,0 +1,26 @@
+This code implements a TensorFlow deep learning model for identifying hate speech in text comments. The code performs the following steps:
+
+Import required libraries such as pandas, numpy and tensorflow
+
+Load a CSV file called "hate_speech.csv" using pandas and store the data in a dataframe called df
+
+Create the features X from the "comment_text" column of the dataframe and the labels y from the other columns.
+
+Create a TextVectorization layer to vectorize the text data into numerical form.
+
+Convert the vectorized text and labels into a tensorflow Dataset object and perform preprocessing such as shuffling and batching.
+
+Split the dataset into training, validation, and test datasets.
+
+Define a sequential TensorFlow model consisting of an embedding layer, a bidirectional LSTM layer, and a series of fully connected layers.
+
+Compile the model with the "BinaryCrossentropy" loss function and the "Adam" optimizer.
+
+Train the model on the training dataset and evaluate the model's performance using precision, recall, and accuracy metrics.
+
+The model is saved in a file called "toxicity.h5" and loaded later using the line "model = tf.keras.models.load_model('toxicity.h5')".
+
+The code also includes an example of making a prediction using the model and wrapping the model with a Gradio interface to allow users to input a text comment and receive a score indicating the likelihood of hate speech.
+
+
+
